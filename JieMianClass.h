@@ -103,7 +103,7 @@ void JieMian::SelectSex()
     cout<<"1.男"<<" ";
     cout<<"2.女"<<endl;
     cin>>Sex;
-}
+} 
 
 void JieMian::OpenConfig()//载入Config
 {
