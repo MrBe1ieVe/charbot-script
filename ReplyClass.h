@@ -1,3 +1,4 @@
+/*  V1.0   */
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -20,12 +21,12 @@ public:
     void Output(int i);
 private:
     char key[256][100];
-    char reply[256][100];//二维数组
+    char reply[256][100];//浜岀淮鏁扮粍
     //char shuru[20];
     char buffer[256],buffer1[256];
 };
 
-void Reply::Openfile()//打开关键字文档并导入
+void Reply::Openfile()//鎵撳紑鍏抽敭瀛楁枃妗ｅ苟瀵煎叆
 {
     
     ifstream file("example.txt");
@@ -35,12 +36,12 @@ void Reply::Openfile()//打开关键字文档并导入
     }
     for(int i=0;!file.eof();i++)
     {   
-	    file.getline(buffer,100);//从关键字文件导入到buffer
+	    file.getline(buffer,100);//浠庡叧閿瓧鏂囦欢瀵煎叆鍒癰uffer
 	    strcpy(key[i],buffer);
 	}
     file.close();
 }
-void Reply::Openfile1()//打开回复1文档
+void Reply::Openfile1()//鎵撳紑鍥炲1鏂囨。
 {
     
 	ifstream file("example1.txt");
@@ -50,13 +51,13 @@ void Reply::Openfile1()//打开回复1文档
     }
     for(int i=0;!file.eof();i++)
     {   
-	    file.getline(buffer1,100);//从关键字文件导入到buffer
+	    file.getline(buffer1,100);//浠庡叧閿瓧鏂囦欢瀵煎叆鍒癰uffer
 	    strcpy(reply[i],buffer1);
 	}
     file.close();
 
 }
-void Reply::Openfile2()//打开回复2文档
+void Reply::Openfile2()//鎵撳紑鍥炲2鏂囨。
 {
     
 	ifstream file("example2.txt");
@@ -66,13 +67,13 @@ void Reply::Openfile2()//打开回复2文档
     }
     for(int i=0;!file.eof();i++)
     {   
-	    file.getline(buffer1,100);//从关键字文件导入到buffer
+	    file.getline(buffer1,100);//浠庡叧閿瓧鏂囦欢瀵煎叆鍒癰uffer
 	    strcpy(reply[i],buffer1);
 	}
     file.close();
 
 }
-void Reply::Openfile3()//打开回复3文档
+void Reply::Openfile3()//鎵撳紑鍥炲3鏂囨。
 {
     
 	ifstream file("example3.txt");
@@ -82,13 +83,13 @@ void Reply::Openfile3()//打开回复3文档
     }
     for(int i=0;!file.eof();i++)
     {   
-	    file.getline(buffer1,100);//从关键字文件导入到buffer
+	    file.getline(buffer1,100);//浠庡叧閿瓧鏂囦欢瀵煎叆鍒癰uffer
 	    strcpy(reply[i],buffer1);
 	}
     file.close();
 
 }
-void Reply::Openfile4()//打开回复4文档
+void Reply::Openfile4()//鎵撳紑鍥炲4鏂囨。
 {
     
 	ifstream file("example4.txt");
@@ -98,7 +99,7 @@ void Reply::Openfile4()//打开回复4文档
     }
     for(int i=0;!file.eof();i++)
     {   
-	    file.getline(buffer1,100);//从关键字文件导入到buffer
+	    file.getline(buffer1,100);//浠庡叧閿瓧鏂囦欢瀵煎叆鍒癰uffer
 	    strcpy(reply[i],buffer1);
 	}
     file.close();
@@ -111,7 +112,7 @@ void Reply::Output(int i)
 }
 
 
-void Reply::Search(char getin[])//搜寻
+void Reply::Search(char getin[])//鎼滃
 {
  
         for(int i=0;i<300;i++)
