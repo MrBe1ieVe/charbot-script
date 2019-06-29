@@ -1,3 +1,4 @@
+/*  V1.0  */
 #include<iostream>
 #include<fstream>
 #include<cstring>
@@ -11,39 +12,39 @@ class JieMian
 {
 public:
     void FirstDisplay();
-    void JudgeConfig();//ÅĞ¶ÏÊÇ·ñ´æÔÚ´æµµ
-    void inName();//ÊäÈëĞÕÃû
-    void SelectJueSe();//Ñ¡Ôñ½ÇÉ«
-    void SelectXingZuo();//Ñ¡ÔñĞÇ×ù
-    void SelectNianLing();//Ñ¡ÔñÄêÁä
-    void SelectSex();//Ñ¡ÔñĞÔ±ğ
-    void OpenConfig();//ÔØÈëConfig
-    void SaveConfig();//±£´æConfig
-    void Reset();//ÖØÉèÈËÉè
-    void Ask_Config();//ÅĞ¶ÏÊÇ·ñÖØÉèÈËÉè
+    void JudgeConfig();//åˆ¤æ–­æ˜¯å¦å­˜åœ¨å­˜æ¡£
+    void inName();//è¾“å…¥å§“å
+    void SelectJueSe();//é€‰æ‹©è§’è‰²
+    void SelectXingZuo();//é€‰æ‹©æ˜Ÿåº§
+    void SelectNianLing();//é€‰æ‹©å¹´é¾„
+    void SelectSex();//é€‰æ‹©æ€§åˆ«
+    void OpenConfig();//è½½å…¥Config
+    void SaveConfig();//ä¿å­˜Config
+    void Reset();//é‡è®¾äººè®¾
+    void Ask_Config();//åˆ¤æ–­æ˜¯å¦é‡è®¾äººè®¾
     void Display();
-    void Judge(Reply &);//´«µİÊı¾İ¸ø½çÃæÀà
+    void Judge(Reply &);//ä¼ é€’æ•°æ®ç»™ç•Œé¢ç±»
 private:
-    //char XingZuo[3];//´¢´æĞÇ×ù
-    string Name;//ÊäÈëĞÕÃû
-    int JueSe;/*½ÇÉ«´úÂë
-    1.ĞÄÀíÒ½Éú 2.ÂèÂè 3.Å®ÅóÓÑ
-    4.ÄĞÅóÓÑ 5.ÒÑ¹ÊÇ×ÈË 6.·ÖÊÖÁµÈË*/
-    int XingZuo;/*ĞÇ×ù´úÂë
-    1.°×Ñò 2.½ğÅ£ 3.Ë«×Ó4.¾ŞĞ·
-    5.Ê¨×Ó 6.´¦Å® 7.Ìì³Ó 8.ÌìĞ«
-    9.ÉäÊÖ 10.Ä¦Ğ« 11.Ë®Æ¿ 12.Ë«Óã*/
-    int NianLing;//ÄêÁä 1.15~35 2.35~55
-    int Sex;//ĞÔ±ğ 1.ÄĞ 2.Å®
+    //char XingZuo[3];//å‚¨å­˜æ˜Ÿåº§
+    string Name;//è¾“å…¥å§“å
+    int JueSe;/*è§’è‰²ä»£ç 
+    1.å¿ƒç†åŒ»ç”Ÿ 2.å¦ˆå¦ˆ 3.å¥³æœ‹å‹
+    4.ç”·æœ‹å‹ 5.å·²æ•…äº²äºº 6.åˆ†æ‰‹æ‹äºº*/
+    int XingZuo;/*æ˜Ÿåº§ä»£ç 
+    1.ç™½ç¾Š 2.é‡‘ç‰› 3.åŒå­4.å·¨èŸ¹
+    5.ç‹®å­ 6.å¤„å¥³ 7.å¤©ç§¤ 8.å¤©è
+    9.å°„æ‰‹ 10.æ‘©è 11.æ°´ç“¶ 12.åŒé±¼*/
+    int NianLing;//å¹´é¾„ 1.15~35 2.35~55
+    int Sex;//æ€§åˆ« 1.ç”· 2.å¥³
     
 };
 void JieMian::FirstDisplay()
 {
     cout<<"********************"<<endl;
-    cout<<"    ĞÄÀí°²¸§ÏµÍ³"<<endl;
+    cout<<"    å¿ƒç†å®‰æŠšç³»ç»Ÿ"<<endl;
     cout<<"********************"<<endl;
 }
-void JieMian::JudgeConfig()//ÅĞ¶ÏÊÇ·ñ´æÔÚ´æµµ
+void JieMian::JudgeConfig()//åˆ¤æ–­æ˜¯å¦å­˜åœ¨å­˜æ¡£
 {
     fstream judge("Config.txt",ios::in);
     if(!judge)
@@ -57,54 +58,54 @@ void JieMian::JudgeConfig()//ÅĞ¶ÏÊÇ·ñ´æÔÚ´æµµ
 }
 void JieMian::inName()
 {
-    cout<<"ÇëÊäÈëÁÄÌì¶ÔÏóĞÕÃû"<<endl;
+    cout<<"è¯·è¾“å…¥èŠå¤©å¯¹è±¡å§“å"<<endl;
     cin>>Name;
 }
 void JieMian::SelectJueSe()
 {
-    cout<<"ÇëÑ¡Ôñ½ÇÉ«"<<endl;
-    cout<<"1.ĞÄÀíÒ½Éú"<<" ";
-    cout<<"2.ÂèÂè"<<" ";
-    cout<<"3.Å®ÅóÓÑ"<<endl;
-    cout<<"4.ÄĞÅóÓÑ"<<" ";
-    cout<<"5.ÒÑ¹ÊÇ×ÈË"<<" ";
-    cout<<"6.·ÖÊÖÁµÈË"<<endl;
+    cout<<"è¯·é€‰æ‹©è§’è‰²"<<endl;
+    cout<<"1.å¿ƒç†åŒ»ç”Ÿ"<<" ";
+    cout<<"2.å¦ˆå¦ˆ"<<" ";
+    cout<<"3.å¥³æœ‹å‹"<<endl;
+    cout<<"4.ç”·æœ‹å‹"<<" ";
+    cout<<"5.å·²æ•…äº²äºº"<<" ";
+    cout<<"6.åˆ†æ‰‹æ‹äºº"<<endl;
     cin>>JueSe;
 
 }
 void JieMian::SelectXingZuo()
 {
-    cout<<"ÇëÑ¡ÔñĞÇ×ù"<<endl;
-    cout<<"1.°×Ñò"<<" ";
-    cout<<"2.½ğÅ£"<<" ";
-    cout<<"3.Ë«×Ó"<<" ";
-    cout<<"4.¾ŞĞ·"<<endl;
-    cout<<"5.Ê¨×Ó"<<" ";
-    cout<<"6.´¦Å®"<<" ";
-    cout<<"7.Ìì³Ó"<<" ";
-    cout<<"8.ÌìĞ«"<<endl;
-    cout<<"9.ÉäÊÖ"<<" ";
-    cout<<"10.Ä¦Ğ«"<<" ";
-    cout<<"11.Ë®Æ¿"<<" ";
-    cout<<"12.Ë«Óã"<<endl;  
+    cout<<"è¯·é€‰æ‹©æ˜Ÿåº§"<<endl;
+    cout<<"1.ç™½ç¾Š"<<" ";
+    cout<<"2.é‡‘ç‰›"<<" ";
+    cout<<"3.åŒå­"<<" ";
+    cout<<"4.å·¨èŸ¹"<<endl;
+    cout<<"5.ç‹®å­"<<" ";
+    cout<<"6.å¤„å¥³"<<" ";
+    cout<<"7.å¤©ç§¤"<<" ";
+    cout<<"8.å¤©è"<<endl;
+    cout<<"9.å°„æ‰‹"<<" ";
+    cout<<"10.æ‘©è"<<" ";
+    cout<<"11.æ°´ç“¶"<<" ";
+    cout<<"12.åŒé±¼"<<endl;  
     cin>>XingZuo;
 }
 void JieMian::SelectNianLing()
 {
-    cout<<"ÇëÑ¡ÔñÄêÁä"<<endl;
-    cout<<"1.15~35Ëê"<<" ";
-    cout<<"2.35~55Ëê"<<endl;
+    cout<<"è¯·é€‰æ‹©å¹´é¾„"<<endl;
+    cout<<"1.15~35å²"<<" ";
+    cout<<"2.35~55å²"<<endl;
     cin>>NianLing;
 }
 void JieMian::SelectSex()
 {
-    cout<<"ÇëÑ¡ÔñĞÔ±ğ"<<endl;
-    cout<<"1.ÄĞ"<<" ";
-    cout<<"2.Å®"<<endl;
+    cout<<"è¯·é€‰æ‹©æ€§åˆ«"<<endl;
+    cout<<"1.ç”·"<<" ";
+    cout<<"2.å¥³"<<endl;
     cin>>Sex;
 }
 
-void JieMian::OpenConfig()//ÔØÈëConfig
+void JieMian::OpenConfig()//è½½å…¥Config
 {
     string temp;
     ifstream Config("Config.txt",ios::in);
@@ -119,7 +120,7 @@ void JieMian::OpenConfig()//ÔØÈëConfig
     Config>>Sex;
     Config.close();
 }
-void JieMian::SaveConfig()//±£´æConfig
+void JieMian::SaveConfig()//ä¿å­˜Config
 {
     ofstream Config("Config.txt",ios::out);
     if(!Config)
@@ -134,7 +135,7 @@ void JieMian::SaveConfig()//±£´æConfig
     Config<<Sex;
     Config.close();
 }
-void JieMian::Reset()//ÖØÉèÈËÉè
+void JieMian::Reset()//é‡è®¾äººè®¾
 {
     inName();
     SelectJueSe();
@@ -143,12 +144,12 @@ void JieMian::Reset()//ÖØÉèÈËÉè
     SelectSex();
     SaveConfig();
 }
-void JieMian::Ask_Config()//ÅĞ¶ÏÊÇ·ñÖØÑ¡
+void JieMian::Ask_Config()//åˆ¤æ–­æ˜¯å¦é‡é€‰
 {
     string Judge;
-    cout<<"ÊÇ·ñÔØÈëÉÏÒ»´ÎµÄ´æµµ?"<<endl;
+    cout<<"æ˜¯å¦è½½å…¥ä¸Šä¸€æ¬¡çš„å­˜æ¡£?"<<endl;
     cin>>Judge;
-    if(Judge=="ÊÇ")
+    if(Judge=="æ˜¯")
         OpenConfig();
     else 
         Reset();
